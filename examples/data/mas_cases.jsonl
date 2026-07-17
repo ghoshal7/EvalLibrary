@@ -1,0 +1,1 @@
+{"case_id": "mas-1", "inputs": {"query": "What is the warranty period?"}, "expected": {"flow": ["orchestrator->researcher", "researcher->writer"], "assertions": [{"type": "contains", "value": "24 months"}, {"type": "contains", "value": "receipt"}], "tools": [{"name": "kb.search"}]}}

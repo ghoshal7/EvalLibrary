@@ -1,0 +1,6 @@
+skill: agent_trajectory_eval
+version: 1.0.0
+pattern_pack: agent_tool_use
+entry: run.py
+merge_order: [pattern_defaults, domain_pack, app_overrides]
+report: text

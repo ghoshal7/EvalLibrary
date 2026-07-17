@@ -1,0 +1,16 @@
+# Default rubric criteria for RAG answer quality (pattern layer).
+# Apps override/extend via customize_skill; never edit in place.
+criteria:
+  - name: relevancy
+    description: The answer directly addresses the user's question.
+    weight: 1.0
+    anchors:
+      1: Off-topic or answers a different question.
+      3: Partially addresses the question; notable gaps.
+      5: Fully and directly addresses the question.
+  - name: completeness
+    description: All parts of the question are covered using the context.
+    weight: 1.0
+    anchors:
+      1: Major requested elements missing.
+      5: Every requested element present and grounded.

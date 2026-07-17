@@ -1,0 +1,1 @@
+{"case_id": "ra-1", "inputs": {"query": "Summarize our warranty policy for customers"}, "expected": {"flow": ["orchestrator->researcher_web", "orchestrator->researcher_kb", "orchestrator->writer", "writer->checker"], "assertions": [{"type": "contains", "value": "24 month"}, {"type": "not_contains", "value": "TBD"}]}}

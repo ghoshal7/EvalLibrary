@@ -1,0 +1,6 @@
+skill: robustness_probe
+version: 1.0.0
+pattern_pack: robustness
+entry: run.py
+merge_order: [pattern_defaults, domain_pack, app_overrides]
+report: text

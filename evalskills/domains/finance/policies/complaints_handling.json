@@ -1,0 +1,5 @@
+[
+  {"rule": "require_before", "first": "verify_identity", "then": "update_address"},
+  {"rule": "arg_max", "tool": "refund", "arg": "amount", "max": 500},
+  {"rule": "forbidden_tool", "tool": "close_account"}
+]

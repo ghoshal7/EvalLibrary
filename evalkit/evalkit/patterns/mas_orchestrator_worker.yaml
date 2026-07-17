@@ -1,0 +1,15 @@
+# Pattern pack: MAS orchestrator-worker / fan-out (MAS survey pattern)
+# Orchestrator decomposes; workers execute in parallel scopes; results merge.
+pattern: mas_orchestrator_worker
+metrics:
+  - scorer: handoff_flow            # fan-out edges present (order-free)
+    params: {mode: subset}
+  - scorer: coordination_efficiency # duplicated worker effort = waste
+    params: {max_redundant_tool_calls: 0}
+  - scorer: agent_scope             # per-worker pattern scorers bound in
+    params: {}                      #   the composition file (agents.*)
+  - scorer: scenario_assertions     # outcome layer on merged final output
+reliability:
+  n_attempts: 4
+  pass_metric: scenario
+safety_addons: [injection_via_worker_returns]

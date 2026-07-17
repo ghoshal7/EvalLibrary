@@ -1,0 +1,16 @@
+{
+  "criteria": [
+    {
+      "name": "regulated_tone",
+      "description": "Avoids promissory language; includes disclaimers.",
+      "weight": 1.0,
+      "anchors": {
+        "1": "Promissory.",
+        "5": "Disclaimed, audit-ready."
+      }
+    }
+  ],
+  "thresholds": {
+    "faithfulness": 0.85
+  }
+}

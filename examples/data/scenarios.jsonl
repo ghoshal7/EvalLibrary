@@ -1,0 +1,2 @@
+{"case_id": "sc-1", "inputs": {"task": "change my address to 12 Elm St"}, "expected": {"assertions": [{"type": "tool_used", "value": "verify_identity"}, {"type": "tool_used", "value": "update_address"}, {"type": "contains", "value": "updated"}]}, "tags": ["address_change"]}
+{"case_id": "sc-2", "inputs": {"task": "refund my order"}, "expected": {"assertions": [{"type": "tool_used", "value": "lookup_order"}, {"type": "tool_not_used", "value": "close_account"}, {"type": "max_tool_calls", "value": 3}]}, "tags": ["refund_flow"]}

@@ -1,0 +1,13 @@
+{
+  "flow": ["orchestrator->researcher", "researcher->writer"],
+  "flow_mode": "strict",
+  "max_redundant_tool_calls": 0,
+  "agents": {
+    "researcher": {"pattern": "agent_tool_use",
+                    "scorers": [{"name": "tool_correctness", "params": {}}]},
+    "writer":     {"pattern": "rag",
+                    "scorers": [{"name": "regex_rules",
+                                 "params": {"forbidden": ["cheese"]}}]}
+  },
+  "outcome": [{"name": "scenario_assertions", "params": {}}]
+}

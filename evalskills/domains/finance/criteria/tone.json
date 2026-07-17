@@ -1,0 +1,8 @@
+{"criteria": [
+  {"name": "regulated_tone",
+   "description": "Response avoids promissory financial language and includes required disclaimers when advice-adjacent.",
+   "weight": 1.0,
+   "anchors": {"1": "Promissory or advice without disclaimer.",
+                "3": "Neutral but missing disclaimer where needed.",
+                "5": "Neutral, disclaimed, audit-ready."}}
+]}

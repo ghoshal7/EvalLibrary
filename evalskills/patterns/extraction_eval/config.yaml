@@ -1,0 +1,6 @@
+skill: extraction_eval
+version: 0.1.0
+pattern_pack: extraction
+entry: run.py
+scorers: [json_schema_lite,exact_match]
+calibrated: false

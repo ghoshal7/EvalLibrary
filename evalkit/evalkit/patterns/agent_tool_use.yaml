@@ -1,0 +1,14 @@
+# Pattern pack: single-agent tool use (L2)
+pattern: agent_tool_use
+metrics:
+  - scorer: tool_correctness
+    params: {check_args: true}
+  - scorer: trajectory_match
+    params: {mode: unordered}
+  - scorer: step_efficiency
+  - scorer: policy_engine
+    params: {policies: []}         # app supplies policy file
+reliability:
+  n_attempts: 4
+  pass_metric: tool_correctness
+safety_addons: [injection_in_tool_returns, action_policy_probes]

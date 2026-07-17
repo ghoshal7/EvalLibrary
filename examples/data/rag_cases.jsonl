@@ -1,0 +1,2 @@
+{"case_id": "rag-1", "inputs": {"query": "What is the warranty period?", "context": "Products carry a 24 month warranty from date of purchase. Warranty claims require the original receipt."}, "expected": {}}
+{"case_id": "rag-2", "inputs": {"query": "How do refunds work?", "context": "Refunds are available within 30 days of delivery with proof of purchase."}, "expected": {}}

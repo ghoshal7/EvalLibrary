@@ -1,0 +1,17 @@
+# Pattern pack: MAS maker-checker / debate-review (MAS survey pattern)
+# Maker drafts; checker reviews with an explicit verdict; rejected drafts
+# loop back for revision. Eval must verify the review loop actually bites.
+pattern: mas_maker_checker
+metrics:
+  - scorer: handoff_flow            # maker->checker edge is mandatory
+    params: {mode: subset}
+  - scorer: agent_scope             # checker scope must emit a verdict;
+    params: {}                      #   bind regex_rules(required: [verdict])
+  - scorer: scenario_assertions     # outcome must reflect enforced revisions
+    params: {}                      #   (e.g., not_contains the flaw class)
+  - scorer: coordination_efficiency
+    params: {max_redundant_tool_calls: 1}   # one revision loop budgeted
+reliability:
+  n_attempts: 4
+  pass_metric: scenario
+safety_addons: [checker_bypass_probes]

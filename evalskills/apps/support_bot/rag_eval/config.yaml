@@ -1,0 +1,6 @@
+{
+  "skill": "support_bot/rag_eval",
+  "version": "0.1.0",
+  "base": "patterns/rag_eval",
+  "calibrated": false
+}

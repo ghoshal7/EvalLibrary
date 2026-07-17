@@ -1,0 +1,6 @@
+skill: safety_scan
+version: 1.0.0
+pattern_pack: safety
+entry: run.py
+merge_order: [pattern_defaults, domain_pack, app_overrides]
+report: text

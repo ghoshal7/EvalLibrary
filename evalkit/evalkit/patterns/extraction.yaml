@@ -1,0 +1,11 @@
+# Pattern pack: structured extraction / text-to-SQL (L2)
+pattern: extraction
+metrics:
+  - scorer: json_schema_lite       # schema gate; app supplies required_fields
+    params: {}
+  - scorer: exact_match            # per-field accuracy vs gold
+    params: {field: answer}
+reliability:
+  n_attempts: 1                    # deterministic decoding typical here
+  pass_metric: exact_match
+safety_addons: [injection_via_document_content]

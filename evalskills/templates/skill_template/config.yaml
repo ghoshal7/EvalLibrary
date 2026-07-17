@@ -1,0 +1,6 @@
+skill: {{name}}
+version: 0.1.0
+pattern_pack: {{pattern}}
+entry: run.py
+scorers: [{{scorers}}]
+calibrated: false

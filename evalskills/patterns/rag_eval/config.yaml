@@ -1,0 +1,9 @@
+skill: rag_eval
+version: 1.0.0
+pattern_pack: rag                    # binds to evalkit/patterns/rag.yaml
+entry: run.py
+judge_model: ${EVAL_JUDGE_MODEL}     # resolved by skill runtime; stub in demo
+prompts:
+  criteria: prompts/rag_default_criteria.yaml
+merge_order: [pattern_defaults, domain_pack, app_overrides]
+report: text

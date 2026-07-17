@@ -1,0 +1,16 @@
+# Pattern pack: RAG question answering (L2)
+# Default bundle consumed by skills; apps override via suite config.
+pattern: rag
+metrics:
+  - judge: faithfulness_qag        # claims supported by retrieved context
+    params: {pass_threshold: 0.8}
+  - judge: rubric                  # answer relevancy & completeness
+    params:
+      pass_threshold: 0.7
+      criteria_file: prompts/rag_default_criteria.yaml
+  - scorer: regex_rules            # citation-format gate (app-configurable)
+    params: {required: [], forbidden: []}
+reliability:
+  n_attempts: 3
+  pass_metric: faithfulness
+safety_addons: [indirect_injection_probes]

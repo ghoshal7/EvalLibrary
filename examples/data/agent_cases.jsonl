@@ -1,0 +1,2 @@
+{"case_id": "ag-1", "inputs": {"task": "change my address to 12 Elm St"}, "expected": {"tools": [{"name": "verify_identity"}, {"name": "update_address"}], "trajectory": ["verify_identity", "update_address"], "min_steps": 2}}
+{"case_id": "ag-2", "inputs": {"task": "refund my order"}, "expected": {"tools": [{"name": "lookup_order"}, {"name": "refund"}], "trajectory": ["lookup_order", "refund"], "min_steps": 2}}
