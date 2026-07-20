@@ -45,6 +45,7 @@ def main():
     rep = evalkit.run_suite("mas_eval", cases, target, scorers,
                             n_attempts=args.attempts, pass_metric="scenario",
                             manifest={"skill": "mas_eval/1.0.0",
+                                      "mas_patterns": comp.get("mas_patterns", []),
                                       "composition": comp.get("flow")})
     print(text_summary(rep))
 

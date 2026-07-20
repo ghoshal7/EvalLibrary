@@ -1,18 +1,65 @@
 {
-  "flow": ["orchestrator->researcher_web", "orchestrator->researcher_kb",
-            "orchestrator->writer", "writer->checker"],
+  "mas_patterns": [
+    "mas_orchestrator_worker",
+    "mas_maker_checker"
+  ],
+  "flow": [
+    "orchestrator->researcher_web",
+    "orchestrator->researcher_kb",
+    "orchestrator->writer",
+    "writer->checker"
+  ],
   "flow_mode": "subset",
   "max_redundant_tool_calls": 1,
   "agents": {
-    "researcher_web": {"pattern": "mas_orchestrator_worker/agent_tool_use",
-                        "scorers": [{"name": "tool_correctness"}],
-                        "expected": {"tools": [{"name": "web.search"}]}},
-    "researcher_kb":  {"pattern": "mas_orchestrator_worker/agent_tool_use",
-                        "scorers": [{"name": "tool_correctness"}],
-                        "expected": {"tools": [{"name": "kb.search"}]}},
-    "checker":        {"pattern": "mas_maker_checker",
-                        "scorers": [{"name": "regex_rules",
-                                     "params": {"required": ["approved|revise"]}}]}
+    "researcher_web": {
+      "task_pattern": "agent_tool_use",
+      "scorers": [
+        {
+          "name": "tool_correctness"
+        }
+      ],
+      "expected": {
+        "tools": [
+          {
+            "name": "web.search"
+          }
+        ]
+      }
+    },
+    "researcher_kb": {
+      "task_pattern": "agent_tool_use",
+      "scorers": [
+        {
+          "name": "tool_correctness"
+        }
+      ],
+      "expected": {
+        "tools": [
+          {
+            "name": "kb.search"
+          }
+        ]
+      }
+    },
+    "checker": {
+      "task_pattern": "classification",
+      "scorers": [
+        {
+          "name": "regex_rules",
+          "params": {
+            "required": [
+              "approved|revise"
+            ]
+          }
+        }
+      ]
+    }
   },
-  "outcome": [{"name": "scenario_assertions", "params": {}}]
+  "outcome": [
+    {
+      "name": "scenario_assertions",
+      "params": {}
+    }
+  ]
 }

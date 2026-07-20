@@ -1,6 +1,8 @@
 skill: mas_eval
 version: 1.0.0
-pattern_pack: mas_orchestrator_worker|mas_maker_checker
+# MAS coordination-pattern packs this skill can bind; each use case's
+# composition.json selects one or more via its "mas_patterns" list.
+pattern_pack: [mas_orchestrator_worker, mas_maker_checker]
 entry: run.py
 merge_order: [pattern_defaults, domain_pack, app_overrides]
 report: text

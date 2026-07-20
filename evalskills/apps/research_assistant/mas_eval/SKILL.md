@@ -5,8 +5,8 @@ orchestrator-worker fan-out (researcher_web + researcher_kb, each running
 the single-agent tool-use pattern in its scope) followed by maker-checker
 (writer drafts, checker issues a verdict, rejected drafts loop back once).
 
-This folder carries ONLY use-case data: composition.json (topology + per-
-agent expectations + budgets), the app dataset, and a thin wrapper.
+This folder carries ONLY use-case data: composition.json (mas_patterns = both
+coordination packs; per-agent task_pattern + expectations; budgets), the app dataset, and a thin wrapper.
 Logic lives in patterns/mas_eval and evalkit.
 
 Run: `python run.py --dataset cases.jsonl --target mock_app:research_mas --attempts 4`

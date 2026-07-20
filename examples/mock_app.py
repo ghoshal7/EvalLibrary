@@ -69,7 +69,7 @@ def mas_pipeline(inputs):
                 {"result": "24 month warranty; receipt required"}, parent_id=res.span_id)
     res.outputs["result"] = "24 month warranty; receipt required"
     tb.span(SpanKind.HANDOFF, "handoff", {}, {}, parent_id=orch.span_id,
-            **{"from": "researcher", "to": "writer"})
+            **{"from": "orchestrator", "to": "writer"})
     wr = tb.span(SpanKind.AGENT, "writer", {"prompt": q}, {}, parent_id=orch.span_id)
     ans = "The warranty period is 24 months and claims require the original receipt."
     tb.span(SpanKind.LLM, "compose", {"prompt": q}, {"completion": ans},
